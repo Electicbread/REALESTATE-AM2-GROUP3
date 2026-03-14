@@ -13,6 +13,7 @@ public class Owner {
     public String email;
 
     public Owner(String num, String telNum, Property[] propertiesOwned, String email) {
+        super(String telNum, Property[] propertiesOwned, String email);
         this.email = email;
     }
     
