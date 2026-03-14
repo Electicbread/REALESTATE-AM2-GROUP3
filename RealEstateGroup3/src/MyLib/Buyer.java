@@ -10,7 +10,7 @@ package MyLib;
  */
 public class Buyer {
     private double budget;
-    //what access modifier for the availproperties array?
+    private Property[] availProperties;//what access modifier for the availproperties array?
     private PaymentPlan payment;
 
     public void viewProperty() {
