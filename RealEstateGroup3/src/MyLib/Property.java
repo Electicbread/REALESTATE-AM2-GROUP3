@@ -25,7 +25,7 @@ public abstract class Property {
         this.size = size;
     }
 
-    public getPrice(){
+    public double getPrice(){
         return price;
     }
     
