@@ -20,7 +20,10 @@ public class Spot extends PaymentPlan{
     
     @Override
     public double calculatePrice() {
-        return super.reservedFee * discount; //i forgot what the base price is i mean we havent added the full calculation logic
+        //return super.reservedFee * discount; //i forgot what the base price is i mean we havent added the full calculation logic
+        double priceMinusReserved = super.property.getPrice - super.reservedFee;
+        double spotPrice = priceMinusReserved * discount;//discount is based on days so if statement
+        return spotPrice;
     }
     
     public void viewReceipt() {
