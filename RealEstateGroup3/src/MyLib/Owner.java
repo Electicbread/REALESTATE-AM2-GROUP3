@@ -28,4 +28,12 @@ public class Owner {
     public void updatePropertyDetails(Property) {
         //identifier expected
     }
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
