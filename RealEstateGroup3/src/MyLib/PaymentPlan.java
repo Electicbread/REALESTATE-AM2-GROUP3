@@ -8,7 +8,7 @@ package MyLib;
  *
  * @author Synthe
  */
-public class PaymentPlan {
+public abstract class PaymentPlan {
     private Property property;
     private double reservedFee;
 
@@ -17,11 +17,9 @@ public class PaymentPlan {
         this.reservedFee = reservedFee;
     }
     
-    public void viewReceipt() {
+    public abstract void viewReceipt();
         
-    }
     
-    public double calculatePrice() {
-        return reservedFee; //placeholder, include calculations later
-    }
+    
+    public abstract double calculatePrice();
 }
