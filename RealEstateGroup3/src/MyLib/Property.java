@@ -24,6 +24,10 @@ public abstract class Property {
         this.status = status;
         this.size = size;
     }
+
+    public getPrice(){
+        return price;
+    }
     
     public abstract void getFeatures();
     
