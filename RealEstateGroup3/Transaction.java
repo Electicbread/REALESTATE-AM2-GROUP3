@@ -26,6 +26,18 @@ public class Transaction {
     }
     
     public void viewRecord() {
-        System.out.println("something bro these are a lot of stuff");
+        System.out.println("TRANSACTION RECORD");
+
+        System.out.println("Buyer: " + buyer.name);
+        System.out.println("Owner: " + owner.name);
+        System.out.println("Agent: " + agent.name);
+
+        System.out.println("Property Details");
+        property.getFeatures();
+
+        System.out.println("Payment Details");
+        payment.viewReceipt();
+
+        System.out.println("Date: " + date.getDate());
     }
 }
