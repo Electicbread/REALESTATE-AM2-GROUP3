@@ -13,7 +13,7 @@ public class ConcretePaymentFactory extends PaymentFactory {
 
         switch(choice) {
             case 1:
-                return new Spot(property, reservedFee, value, term);
+                return new Spot(property, reservedFee, discount, days);
 
             case 2:
                 return new Installment(value, term, property, reservedFee);
