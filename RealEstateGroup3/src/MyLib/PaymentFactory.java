@@ -6,7 +6,6 @@ public abstract class PaymentFactory {
         int choice,
         Property property,
         double reservedFee,
-        float value,
         int term
     );
 }
