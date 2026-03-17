@@ -27,7 +27,7 @@ public class Buyer extends User {
         int i = 1;
         for (Property property : availProperties) {
           
-            System.out.println("Property " + i);
+            System.out.println("Property #" + i);
             property.getFeatures();
             System.out.println("Status:" + property.getStatus());
             System.out.println("--------------------");
@@ -41,7 +41,7 @@ public class Buyer extends User {
                 if("Available".equals(property.getStatus())){
                     System.out.println("Property has been purchased!");
                 } else {
-                    System.out.println("Property cannot be purchased!");
+                    System.out.println("Property cannot be purchased! (Unavailable)");
                 }
             break;
             }
