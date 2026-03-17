@@ -1,0 +1,25 @@
+package MyLib;
+
+public class ConcretePaymentFactory extends PaymentFactory {
+
+    @Override
+    public PaymentPlan createPaymentPlan(
+        int choice,
+        Property property,
+        double reservedFee,
+        float value,
+        int term
+    ) {
+
+        switch(choice) {
+            case 1:
+                return new Spot(property, reservedFee, value, term);
+
+            case 2:
+                return new Installment(value, term, property, reservedFee);
+
+            default:
+                return null;
+        }
+    }
+}
