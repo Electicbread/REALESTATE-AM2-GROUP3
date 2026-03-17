@@ -18,8 +18,8 @@ public class Date {
         this.month = month;
         this.year = year;
     }
-    
+
     public void getDate() {
-        System.out.println(month + " " + day + ", " + year); //this is just a sample, we'll decide its final output later on
+        System.out.println("Date of Transaction: " + month + " " + day + ", " + year); //this is just a sample, we'll decide its final output later on
     }
 }
