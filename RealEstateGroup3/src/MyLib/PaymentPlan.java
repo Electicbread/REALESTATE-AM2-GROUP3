@@ -20,15 +20,4 @@ public abstract class PaymentPlan {
 
     public abstract void viewReceipt();
     public abstract double calculatePrice();
-
-    public static PaymentPlan selectPaymentPlan(Property property, int choice, double reservedFee, int days) {
-        switch (choice) {
-            case 1:
-                return new Spot(property, reservedFee, days);
-            case 2:
-                return new Installment(property, reservedFee);
-            default:
-                return null;
-        }
-    }
 }
