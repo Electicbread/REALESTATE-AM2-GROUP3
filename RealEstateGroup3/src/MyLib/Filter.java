@@ -18,4 +18,12 @@ public class Filter {
     public void filterProperty() {
         //sort thru properties and output those that match the search filter aif thats how u plan to implement it
     }
+
+    public Property getProperty() {
+        return property;
+    }
+
+    public void setProperty(Property property) {
+        this.property = property;
+    }
 }
