@@ -18,8 +18,12 @@ public class Agent extends User{
         this.assignedProperties = assignedProperties;
     }
     
-    public void manageProperty() {
-        
+    public void manageProperty(Property property, int choice) {
+        switch (choice) {
+            case 1 -> property.status = "Available";
+            case 2 -> property.status = "Reserved";
+            case 3 -> property.status = "Sold";
+            default -> System.out.println("Invalid status selection.");
     }
     
     public void scheduleViewing(Property property, Buyer buyer) {
