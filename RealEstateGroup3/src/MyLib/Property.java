@@ -9,19 +9,18 @@ package MyLib;
  * @author argee
  */
 public abstract class Property {
-    private double price;
-    private String location;
-    private String block;
-    private String lot;
-    private String status;
-    private int size;
+    protected double price;
+    protected String location;
+    protected String block;
+    protected String lot;
+    protected String status;
+    protected int size;
 
-    public Property(double price, String location, String block, String lot, String status, int size) {
+    public Property(double price, String location, String block, String lot, int size) {
         this.price = price;
         this.location = location;
         this.block = block;
         this.lot = lot;
-        this.status = status;
         this.size = size;
     }
 
@@ -30,5 +29,23 @@ public abstract class Property {
     }
     
     public abstract void getFeatures();
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getBlock() {
+        return block;
+    }
+
+    public String getLot() {
+        return lot;
+    }
+    
+    
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     
 }
