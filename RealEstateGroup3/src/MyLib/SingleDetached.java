@@ -9,17 +9,16 @@ package MyLib;
  * @author Synthe
  */
 public class SingleDetached extends Property {
-    private boolean carPort;
-    private boolean twoFloor;
-
-    public SingleDetached(double price, String location, String block, String lot, String status, int size, boolean carPort, boolean twoFloor) {
-        super(price, location, block, lot, status, size);
-        this.carPort = carPort;
-        this.twoFloor = twoFloor;
+     public SingleDetached(double price, String location, String block, String lot, int size) {
+        super(price, location, block, lot, size);
     }
     
     @Override
     public void getFeatures() {
-        //plz output somthing
+        System.out.println("Price: " + super.price);
+        System.out.println("Location: " + super.location);
+        System.out.println("Block: " + super.block);
+        System.out.println("Lot: " + super.lot);
+        System.out.println("size: " + super.size + " sqm");
     }
 }
