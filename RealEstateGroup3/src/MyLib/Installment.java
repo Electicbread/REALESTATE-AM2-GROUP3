@@ -18,11 +18,27 @@ public class Installment extends PaymentPlan{
         this.month = month;
     }
     
-    public double calculatePrice() {
-        return VariableForBasePaymentPlsAdd + (interest * month);
+     public double calculatePrice() {
+        double downPaymentPrice = super.property.getPrice() * 0.2;
+        double netDownPayment = downPaymentPrice - super.reservedFee;
+        double twelveMonthEquity = netDownPayment/12;
+        return Math.round(twelveMonthEquity * 100.00)/100.00;
+    }
+    
+    public double calculateTotalLoan() {
+        double loanPrice = super.property.getPrice() * 0.8;
+        return Math.round(loanPrice * 100.00)/100.00;
+    }
+    
+    public double calculatePagIbig() {
+        double pagIbigMonthly = calculateTotalLoan() * (interest * (Math.pow(1 + interest, month))/(Math.pow(1 + interest, month)-1));
+        return Math.round(pagIbigMonthly * 100.00)/100.00;
     }
     
     public void viewReceipt() {
         //is there a format we want to follow?
-    }
+        System.out.println("Down Payment: " + calculatePrice());
+        System.out.println("Loan Price: " + calculateTotalLoan());
+        System.out.println("PAG-IBIG Fee: " + calculatePagIbig());
+    }}
 }
