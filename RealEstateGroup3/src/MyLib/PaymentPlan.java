@@ -9,8 +9,8 @@ package MyLib;
  * @author Synthe
  */
 public abstract class PaymentPlan {
-    private Property property;
-    private double reservedFee;
+    protected Property property;
+    protected double reservedFee;
 
     public PaymentPlan(Property property, double reservedFee) {
         this.property = property;
