@@ -2,7 +2,7 @@ package MyLib;
 
 public class PaymentFactory {
 
-    public static PaymentPlan createPlan(int choice, Property property) {
+    public PaymentPlan createPlan(int choice, Property property, double ReservedFee) {
 
         switch(choice) {
 
