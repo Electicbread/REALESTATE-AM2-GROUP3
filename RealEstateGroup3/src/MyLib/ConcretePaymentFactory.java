@@ -6,9 +6,7 @@ public class ConcretePaymentFactory extends PaymentFactory {
     public PaymentPlan createPaymentPlan(
         int choice,
         Property property,
-        double reservedFee,
-        float value,
-        int term
+        double reservedFee
     ) {
 
         switch(choice) {
