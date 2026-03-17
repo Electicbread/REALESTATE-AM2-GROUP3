@@ -16,7 +16,7 @@ public class ConcretePaymentFactory extends PaymentFactory {
                 return new Spot(property, reservedFee, discount, days);
 
             case 2:
-                return new Installment(value, term, property, reservedFee);
+                return new Installment(interest, month, property, reservedFee);
 
             default:
                 return null;
