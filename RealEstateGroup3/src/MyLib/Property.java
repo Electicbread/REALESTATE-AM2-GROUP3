@@ -24,11 +24,57 @@ public abstract class Property {
         this.status = status;
         this.size = size;
     }
-
-    public double getPrice(){
-        return price;
-    }
     
     public abstract void getFeatures();
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getBlock() {
+        return block;
+    }
+
+    public String getLot() {
+        return lot;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setBlock(String block) {
+        this.block = block;
+    }
+
+    public void setLot(String lot) {
+        this.lot = lot;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+    
     
 }
+
