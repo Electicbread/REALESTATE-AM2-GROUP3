@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MyLib;
-
+import java.text.DecimalFormat;
 /**
  *
  * @author Synthe
@@ -11,6 +11,8 @@ package MyLib;
 public class Installment extends PaymentPlan{
     private float interest;
     private int month;
+    private static String pattern = "0.00";
+    private static DecimalFormat df = new DecimalFormat(pattern);
 
     public Installment(float interest, int month, Property property, double reservedFee) {
         super(property, reservedFee);
@@ -36,9 +38,8 @@ public class Installment extends PaymentPlan{
     }
     
     public void viewReceipt() {
-        //is there a format we want to follow?
-        System.out.println("Down Payment: " + calculatePrice());
-        System.out.println("Loan Price: " + calculateTotalLoan());
-        System.out.println("PAG-IBIG Fee: " + calculatePagIbig());
+        System.out.println("Down Payment: " + df.format(calculatePrice()));
+        System.out.println("Loan Price: " + df.format(calculateTotalLoan()));
+        System.out.println("PAG-IBIG Fee: " + df.format(calculatePagIbig()));
     }
 }
