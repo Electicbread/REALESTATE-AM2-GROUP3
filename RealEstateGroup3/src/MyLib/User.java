@@ -9,8 +9,8 @@ package MyLib;
  * @author argee
  */
 public class User {
-    private String name;
-    private String telNum;
+    protected String name;
+    protected String telNum;
 
     public User(String name, String telNum) {
         this.name = name;
