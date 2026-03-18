@@ -20,6 +20,7 @@ public class Installment extends PaymentPlan{
         this.month = month;
     }
     
+    @Override
    public double calculatePrice() {
         double downPaymentPrice = super.property.getPrice() * 0.2;
         double netDownPayment = downPaymentPrice - super.reservedFee;
