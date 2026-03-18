@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MyLib;
-
+import java.util.ArrayList;
 /**
  *
  * @author Synthe
@@ -11,33 +11,39 @@ package MyLib;
 public class Transaction {
     private Buyer buyer;
     private Owner owner;
-    private PaymentPlan payment;
-    private Date date; 
     private Agent agent;
+    private PaymentPlan paymentPlan;
+    private Date date;
     private Property property;
 
-    public Transaction(Buyer buyer, Owner owner, PaymentPlan payment, Date date, Agent agent, Property property) {
+    // added arraylist to store transactions in... transactions, let me know if static is a problemo
+    public static ArrayList<Transaction> transactions = new ArrayList<>();
+
+    public Transaction(Buyer buyer, Owner owner, Agent agent, PaymentPlan paymentPlan, Date date, Property property) {
         this.buyer = buyer;
         this.owner = owner;
-        this.payment = payment;
-        this.date = date;
         this.agent = agent;
+        this.paymentPlan = paymentPlan;
+        this.date = date;
         this.property = property;
+        // adds the current transaction to the arraylist
+        transactions.add(this);
     }
     
     public void viewRecord() {
-        System.out.println("TRANSACTION RECORD");
-
-        System.out.println("Buyer: " + buyer.name);
-        System.out.println("Owner: " + owner.name);
-        System.out.println("Agent: " + agent.name);
-
-        System.out.println("Property Details");
-        property.getFeatures();
-
-        System.out.println("Payment Details");
-        payment.viewReceipt();
-
-        date.getDate();
+        int count = 1;
+        for (Transaction t : transactions) {
+            System.out.println("======= TRANSACTION #" + count +  " ======="); // logs and sorts transactions by #
+            System.out.println("Buyer: " + t.buyer.getName());
+            System.out.println("Owner: " + t.owner.getName());
+            System.out.println("Agent: " + t.agent.getName());
+            t.paymentPlan.viewReceipt();
+            t.property.getFeatures();
+            t.date.getDate();
+            System.out.println("-----------------------------------");
+            System.out.println();
+            
+            count++;
+        }
     }
 }
