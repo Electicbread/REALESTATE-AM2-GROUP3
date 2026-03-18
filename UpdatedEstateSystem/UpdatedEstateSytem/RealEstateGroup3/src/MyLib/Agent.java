@@ -25,9 +25,9 @@ public class Agent extends User{
     
     public void manageProperty(Property property, int choice) {
         switch (choice) {
-            case 1 -> property.status = "Available";
-            case 2 -> property.status = "Reserved";
-            case 3 -> property.status = "Sold";
+            case 1 -> property.setStatus("Available");
+            case 2 -> property.setStatus("Reserved");
+            case 3 -> property.setStatus("Sold");
             default -> System.out.println("Invalid status selection.");
     }
 }
