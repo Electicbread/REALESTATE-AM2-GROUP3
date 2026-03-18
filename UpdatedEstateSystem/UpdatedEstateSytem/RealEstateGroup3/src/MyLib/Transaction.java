@@ -29,6 +29,10 @@ public class Transaction {
         // adds the current transaction to the arraylist
         transactions.add(this);
     }
+
+     public Property getProperty() {
+       return property;
+    }
     
     public void viewRecord() {
         int count = 1;
