@@ -18,13 +18,14 @@ public class Owner extends User{
         super(name, telNum);
         this.email = email;
     }
-    
+
     public String getName() {
         return name;
     }
-
     
-      public void listProperty() {
+    
+    
+    public void listProperty() {
         int blockCount = 5;
         int lotCount = 20;
         
@@ -34,54 +35,74 @@ public class Owner extends User{
                 if(i == 1 ){
                     double price = 1170000;
                     String location = "Eastborough Angono Place (Multi Dwelling Residency) ";
-                    String block = "Block A";
+                    String block = "Block " + i;
                     String lot = "Lot " + j;
                     int size = 90;
                     addProperty = new MultiDwelling(price, location, block, lot, size);
                 } else if (i == 2){
                     double price = 1465000;
                     String location = "Eastborough Angono Place (Single Attached (Basic)) ";
-                    String block = "Block B";
+                    String block = "Block " + i;
                     String lot = "Lot " + j;
                     int size = 75;
                     addProperty = new SingleAttached(price, location, block, lot, size);
                 } else if (i == 3){
                     double price = 1747000;
                      String location = "Eastborough Angono Place (Single Attached (Executive)) ";
-                    String block = "Block C";
+                    String block = "Block " + i;
                     String lot = "Lot " + j;
                     int size = 75;
                     addProperty = new SingleAttached(price, location, block, lot, size);
                 } else if(i == 4){
                     double price = 1170000;
                     String location = "Eastborough Angono Place (Single Attached (Luxury)) ";
-                    String block = "Block D";
+                    String block = "Block " + i;
                     String lot = "Lot " + j;
                     int size = 136;
                     addProperty = new SingleAttached(price, location, block, lot, size);
                 } else if (i == 5){
                     double price = 1170000;
                     String location = "Eastborough Angono Place (Single Detached (Luxury)) ";
-                    String block = "Block E";
+                    String block = "Block " + i;
                     String lot = "Lot " + j;
                     int size = 180;
                     addProperty = new SingleDetached(price, location, block, lot, size);
                 }
                 if (property != null){
-                    addProperty.setStatus("Available");
                     this.property.add(addProperty);
                 }
             }       
         }
     }
 
-     public ArrayList<Property> getProperty() {
+    public ArrayList<Property> getProperty() {
         return property;
     }
     
-    public void getReport(Report report) {
-        
+    
+    
+    public void getReport() {
+        System.out.println("======= OWNER PROPERTY PORTFOLIO =======");
+        System.out.println("Owner: " + this.getName());
+        System.out.println("Email: " + this.email);
+        System.out.println("Total Properties: " + property.size());
+        System.out.println("========================================");
+
+        if (property.isEmpty()) { //if owns nothing
+            System.out.println("No properties listed. Please run listProperty() first.");
+        } else {
+            int count = 1;
+            for (Property p : property) {
+                System.out.println("Property #" + count);
+               
+                p.getFeatures(); 
+                
+                System.out.println("----------------------------------------");
+                count++;
+            }
+        }
     }
+    
     
     
     public String getEmail() {
