@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MyLib;
-import java.text.DecimalFormat;
 /**
  *
  * @author Synthe
@@ -11,8 +10,6 @@ import java.text.DecimalFormat;
 public class Spot extends PaymentPlan{
     private float discount;
     private int days;
-    private static String pattern = "0.00";
-    private static DecimalFormat df = new DecimalFormat(pattern);
 
     public Spot(Property property, double reservedFee, float discount, int days) {
         super(property, reservedFee);
@@ -31,9 +28,9 @@ public class Spot extends PaymentPlan{
     @Override
     public void viewReceipt() {
         //is there a format we want to follow?
-        System.out.println("Total Contract Price: " + df.format(super.property.getPrice()));
-        System.out.println("Reservation Fee: " + df.format(super.reservedFee));
-        System.out.println("Discount: " + df.format(discount));
-        System.out.println("Final Price: " + df.format(calculatePrice()));
+        System.out.println("Total Contract Price: " + super.property.getPrice());
+        System.out.println("Reservation Fee: " + super.reservedFee);
+        System.out.println("Discount: " + discount);
+        System.out.println("Final Price: " + calculatePrice());
     }
 }    
