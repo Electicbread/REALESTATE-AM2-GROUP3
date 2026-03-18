@@ -9,15 +9,17 @@ package MyLib;
  * @author Synthe
  */
 public class MultiDwelling extends Property {
-    private boolean singleFloor;
-
-    public MultiDwelling(double price, String location, String block, String lot, String status, int size, boolean singleFloor) {
-        super(price, location, block, lot, status, size);
-        this.singleFloor = singleFloor;
+     public MultiDwelling(double price, String location, String block, String lot, int size) {
+        super(price, location, block, lot, size);
+        
     }
     
     @Override
     public void getFeatures(){
-        //output somethjing
+        System.out.println("Price: " + super.price);
+        System.out.println("Location: " + super.location);
+        System.out.println("Block: " + super.block);
+        System.out.println("Lot: " + super.lot);
+        System.out.println("size: " + super.size + " sqm");
     }
 }
